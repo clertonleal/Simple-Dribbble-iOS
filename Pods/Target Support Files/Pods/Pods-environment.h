@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_AlamofireObjectMapper 2
 #define COCOAPODS_VERSION_PATCH_AlamofireObjectMapper 0
 
+// Kingfisher
+#define COCOAPODS_POD_AVAILABLE_Kingfisher
+#define COCOAPODS_VERSION_MAJOR_Kingfisher 1
+#define COCOAPODS_VERSION_MINOR_Kingfisher 4
+#define COCOAPODS_VERSION_PATCH_Kingfisher 1
+
 // ObjectMapper
 #define COCOAPODS_POD_AVAILABLE_ObjectMapper
 #define COCOAPODS_VERSION_MAJOR_ObjectMapper 0

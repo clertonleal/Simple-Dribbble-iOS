@@ -8,24 +8,23 @@
 
 import UIKit
 
-
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var shots: [Shot]!
+    var shots: [Shot] = []
     var selectedShot: Shot!
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var progress: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var shot1 = Shot()!
-        shot1.title = "t1"
-        shot1.description = "d1"
-        var shot2 = Shot()!
-        shot2.title = "t2"
-        shot2.description = "d2"
-        shots = [shot1, shot2]
+        configureTableView()
+        DribbbleService().retrievePage(1) { page in
+            self.shots = page.shots!
+            self.tableView.reloadData()
+            self.progress.stopAnimating()
+        }
+        
         tableView.registerNib(UINib(nibName: "ShotTableViewCell", bundle:nil), forCellReuseIdentifier: "Cell")
     }
 
@@ -41,8 +40,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ShotTableViewCell
         
-        cell.name.text = shots[indexPath.row].title
-        cell.owner.text = shots[indexPath.row].description
+        cell.title.text = shots[indexPath.row].title
+        cell.imageShot.kf_setImageWithURL(NSURL(string: shots[indexPath.row].image_teaser_url!)!)
         return cell
     }
     
@@ -57,6 +56,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let controller = segue.destinationViewController as! ShotDetailViewController
             controller.shot = selectedShot
         }
+    }
+    
+    func configureTableView() {
+        tableView.rowHeight = 300
+        tableView.estimatedRowHeight = 300
     }
     
     

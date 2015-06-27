@@ -50,10 +50,12 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'AlamofireObjectMapper.framework'
+  install_framework 'Kingfisher.framework'
   install_framework 'ObjectMapper.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'AlamofireObjectMapper.framework'
+  install_framework 'Kingfisher.framework'
   install_framework 'ObjectMapper.framework'
 fi

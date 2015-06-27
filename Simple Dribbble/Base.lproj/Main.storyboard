@@ -19,6 +19,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zQ4-f8-eYe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="Ewz-O2-z4p">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </activityIndicatorView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="J9k-hM-Wzl"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="BxA-CY-AYS"/>
@@ -35,6 +40,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kyQ-gy-zCf"/>
                     <connections>
+                        <outlet property="progress" destination="Ewz-O2-z4p" id="k0Z-Sm-jSV"/>
                         <outlet property="tableView" destination="zQ4-f8-eYe" id="YmJ-Yi-EBv"/>
                         <segue destination="nJs-95-bRy" kind="show" identifier="Detail" id="Ym7-gZ-9rg"/>
                     </connections>
@@ -82,16 +88,25 @@
                                     <constraint firstAttribute="height" constant="297" id="e7D-5d-5kO"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvL-su-g9I">
+                                <rect key="frame" x="279" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yvL-su-g9I" firstAttribute="centerX" secondItem="A8L-Eg-O0m" secondAttribute="centerX" id="8ax-2m-SeA"/>
                             <constraint firstItem="A8L-Eg-O0m" firstAttribute="leading" secondItem="Csl-9W-c5d" secondAttribute="leading" id="A9O-K8-Xxc"/>
+                            <constraint firstItem="yvL-su-g9I" firstAttribute="top" secondItem="A8L-Eg-O0m" secondAttribute="bottom" constant="26" id="Dmm-fi-b1t"/>
                             <constraint firstAttribute="trailing" secondItem="A8L-Eg-O0m" secondAttribute="trailing" id="LaV-Zh-T4P"/>
                             <constraint firstItem="A8L-Eg-O0m" firstAttribute="top" secondItem="Csl-9W-c5d" secondAttribute="top" id="b4R-fr-zZb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="image" destination="A8L-Eg-O0m" id="fDz-B9-Z7h"/>
+                        <outlet property="text" destination="yvL-su-g9I" id="UJz-GA-R2K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waH-1c-HGm" userLabel="First Responder" sceneMemberID="firstResponder"/>

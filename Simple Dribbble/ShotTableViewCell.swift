@@ -9,6 +9,6 @@
 import UIKit
 
 class ShotTableViewCell: UITableViewCell {
-    @IBOutlet var name: UILabel!
-    @IBOutlet var owner: UILabel!
+    @IBOutlet var imageShot: UIImageView!
+    @IBOutlet var title: UILabel!
 }

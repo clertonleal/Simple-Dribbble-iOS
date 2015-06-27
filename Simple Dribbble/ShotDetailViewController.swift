@@ -9,10 +9,12 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Kingfisher
 
 class ShotDetailViewController: UIViewController {
     
-    @IBOutlet var coisa: UITextView!
+    @IBOutlet var text: UILabel!
+    
     @IBOutlet var image: UIImageView!
     
     var shot: Shot!
@@ -21,17 +23,13 @@ class ShotDetailViewController: UIViewController {
         super.viewDidLoad()
         let coisa = DribbbleService()
         coisa.retrievePage(1) { page in
-            println(page.shots![0].title)
+            self.text.text = page.shots![0].title
             self.downloadImage(page.shots![0].image_url!)
         }
     }
     
     func downloadImage(imageUrl: String) {
-        Alamofire.request(.GET, imageUrl)
-            .response { (request, response, data, error) in
-                let imageNovao = UIImage(data: data as! NSData)
-                self.image.image = imageNovao
-        }
+        image.kf_setImageWithURL(NSURL(string: imageUrl)!)
     }
     
 }
