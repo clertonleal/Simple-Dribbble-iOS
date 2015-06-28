@@ -14,15 +14,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var selectedShot: Shot!
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var progress: UIActivityIndicatorView!
+    @IBOutlet var progressView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        progressView.hidden = false
         DribbbleService().retrievePage(1) { page in
             self.shots = page.shots!
+            self.progressView.hidden = true
             self.tableView.reloadData()
-            self.progress.stopAnimating()
         }
         
         tableView.registerNib(UINib(nibName: "ShotTableViewCell", bundle:nil), forCellReuseIdentifier: "Cell")
