@@ -125,20 +125,52 @@
                                     <constraint firstItem="yvL-su-g9I" firstAttribute="top" secondItem="zSO-JF-iFJ" secondAttribute="topMargin" id="y5K-WH-xoI"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-ld-SMi">
+                                <rect key="frame" x="16" y="352" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="1Ij-zj-mbv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMB-6J-GXT">
+                                <rect key="frame" x="120" y="376" width="389" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdL-mw-RDF">
+                                <rect key="frame" x="16" y="436" width="568" height="144"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="sTj-ld-SMi" firstAttribute="top" secondItem="A8L-Eg-O0m" secondAttribute="bottom" constant="8" symbolic="YES" id="1eC-bh-6Jg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zSO-JF-iFJ" secondAttribute="trailing" constant="-19" id="3Dz-5R-z6p"/>
+                            <constraint firstAttribute="bottom" secondItem="wdL-mw-RDF" secondAttribute="bottom" constant="20" symbolic="YES" id="7y0-we-Jg4"/>
                             <constraint firstItem="A8L-Eg-O0m" firstAttribute="leading" secondItem="Csl-9W-c5d" secondAttribute="leading" id="A9O-K8-Xxc"/>
+                            <constraint firstItem="wdL-mw-RDF" firstAttribute="top" secondItem="sTj-ld-SMi" secondAttribute="bottom" constant="14" id="Bhg-ig-u1D"/>
                             <constraint firstItem="zSO-JF-iFJ" firstAttribute="top" secondItem="i90-8q-hXa" secondAttribute="bottom" constant="231" id="Ezi-7F-H4W"/>
+                            <constraint firstItem="hMB-6J-GXT" firstAttribute="leading" secondItem="sTj-ld-SMi" secondAttribute="trailing" constant="34" id="IWi-a8-XS0"/>
+                            <constraint firstItem="0OG-MS-cYX" firstAttribute="top" secondItem="sTj-ld-SMi" secondAttribute="bottom" constant="178" id="JR7-N4-fAh"/>
                             <constraint firstAttribute="trailing" secondItem="A8L-Eg-O0m" secondAttribute="trailing" id="LaV-Zh-T4P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hMB-6J-GXT" secondAttribute="trailing" constant="75" id="Mw1-qy-rgp"/>
+                            <constraint firstItem="wdL-mw-RDF" firstAttribute="centerX" secondItem="zSO-JF-iFJ" secondAttribute="centerX" id="NvO-Fc-dDX"/>
+                            <constraint firstItem="hMB-6J-GXT" firstAttribute="top" secondItem="A8L-Eg-O0m" secondAttribute="bottom" constant="32" id="PBf-dB-m4r"/>
+                            <constraint firstItem="wdL-mw-RDF" firstAttribute="leading" secondItem="sTj-ld-SMi" secondAttribute="leading" id="Pki-TP-49G"/>
+                            <constraint firstItem="0OG-MS-cYX" firstAttribute="top" secondItem="hMB-6J-GXT" secondAttribute="bottom" constant="203" id="WQU-ga-aTU"/>
                             <constraint firstItem="zSO-JF-iFJ" firstAttribute="leading" secondItem="A8L-Eg-O0m" secondAttribute="leading" constant="-2" id="WV7-eV-Gez"/>
+                            <constraint firstItem="sTj-ld-SMi" firstAttribute="leading" secondItem="Csl-9W-c5d" secondAttribute="leadingMargin" id="YQR-Fs-JSR"/>
                             <constraint firstItem="A8L-Eg-O0m" firstAttribute="top" secondItem="Csl-9W-c5d" secondAttribute="top" constant="47" id="b4R-fr-zZb"/>
                             <constraint firstItem="zSO-JF-iFJ" firstAttribute="bottom" secondItem="A8L-Eg-O0m" secondAttribute="bottom" constant="-8" id="tqi-IR-cIt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authorAvatar" destination="sTj-ld-SMi" id="hhQ-4m-yOr"/>
+                        <outlet property="authorName" destination="hMB-6J-GXT" id="iOA-et-wdu"/>
                         <outlet property="image" destination="A8L-Eg-O0m" id="fDz-B9-Z7h"/>
+                        <outlet property="shotDescription" destination="wdL-mw-RDF" id="qeY-Sx-sT4"/>
                         <outlet property="text" destination="yvL-su-g9I" id="UJz-GA-R2K"/>
                         <outlet property="viewCount" destination="LlQ-We-HLM" id="qME-hW-C3X"/>
                     </connections>

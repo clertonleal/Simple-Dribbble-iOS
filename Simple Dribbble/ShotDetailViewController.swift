@@ -16,18 +16,32 @@ class ShotDetailViewController: UIViewController {
     @IBOutlet var text: UILabel!
     @IBOutlet var image: UIImageView!
     @IBOutlet var viewCount: UILabel!
+    @IBOutlet var authorName: UILabel!
+    @IBOutlet var shotDescription: UILabel!
+    @IBOutlet var authorAvatar: UIImageView!
     
     var shot: Shot!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         text.text = shot.title!
         viewCount.text = String(shot.views_count!)
-        downloadImage(shot.image_url!)
+        authorName.text = shot.player!.name!
+        shotDescription.text = getDescription(shot)
+        authorAvatar.kf_setImageWithURL(NSURL(string: shot.player!.avatar_url!)!)
+        image.kf_setImageWithURL(NSURL(string: shot.image_url!)!)
     }
     
-    func downloadImage(imageUrl: String) {
-        image.kf_setImageWithURL(NSURL(string: imageUrl)!)
+    func getDescription(shot: Shot) -> String {
+        if let description = shot.description {
+            return NSAttributedString(
+                data: description.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
+                options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+                documentAttributes: nil,
+                error: nil)!.string
+        } else {
+            return ""
+        }
     }
-    
 }
