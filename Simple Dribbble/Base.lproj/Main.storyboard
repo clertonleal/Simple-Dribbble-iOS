@@ -39,6 +39,20 @@
                                     <constraint firstItem="OOG-nG-h9d" firstAttribute="centerX" secondItem="XaW-pu-hcs" secondAttribute="centerX" id="czd-Sx-ZKf"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQ3-df-yw3">
+                                <rect key="frame" x="0.0" y="539" width="600" height="61"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="M6V-a2-zJ0">
+                                        <rect key="frame" x="290" y="21" width="20" height="20"/>
+                                        <color key="color" red="0.84705882349999995" green="0.1058823529" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="M6V-a2-zJ0" firstAttribute="centerX" secondItem="gQ3-df-yw3" secondAttribute="centerX" id="2IF-jO-uFB"/>
+                                    <constraint firstItem="M6V-a2-zJ0" firstAttribute="top" secondItem="gQ3-df-yw3" secondAttribute="top" constant="21" id="Mut-JX-WYz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -46,14 +60,19 @@
                             <constraint firstItem="XaW-pu-hcs" firstAttribute="trailing" secondItem="zQ4-f8-eYe" secondAttribute="trailing" id="ABG-gn-l5u"/>
                             <constraint firstItem="zQ4-f8-eYe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cyi-WA-cOz"/>
                             <constraint firstItem="XaW-pu-hcs" firstAttribute="leading" secondItem="zQ4-f8-eYe" secondAttribute="leading" id="DlK-xe-mbH"/>
+                            <constraint firstItem="gQ3-df-yw3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="475" id="IkB-0r-qym"/>
                             <constraint firstItem="XaW-pu-hcs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Wr9-kG-1f5"/>
                             <constraint firstItem="zQ4-f8-eYe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Yyk-iK-BKw"/>
+                            <constraint firstItem="gQ3-df-yw3" firstAttribute="trailing" secondItem="XaW-pu-hcs" secondAttribute="trailing" id="ae4-5H-LLL"/>
                             <constraint firstItem="zQ4-f8-eYe" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="hWE-43-2zm"/>
+                            <constraint firstItem="gQ3-df-yw3" firstAttribute="leading" secondItem="XaW-pu-hcs" secondAttribute="leading" id="j6d-bd-hPd"/>
+                            <constraint firstItem="gQ3-df-yw3" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="rdb-f3-dOn"/>
                             <constraint firstItem="XaW-pu-hcs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vIz-MZ-GW8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kyQ-gy-zCf"/>
                     <connections>
+                        <outlet property="loadingView" destination="gQ3-df-yw3" id="Sfv-kW-ECj"/>
                         <outlet property="progressView" destination="XaW-pu-hcs" id="aw9-MY-Vnu"/>
                         <outlet property="tableView" destination="zQ4-f8-eYe" id="YmJ-Yi-EBv"/>
                         <segue destination="nJs-95-bRy" kind="show" identifier="Detail" id="Ym7-gZ-9rg"/>

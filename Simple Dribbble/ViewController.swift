@@ -8,25 +8,45 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     var shots: [Shot] = []
     var selectedShot: Shot!
+    var actualPage = 1
+    var isLoading = false
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var progressView: UIView!
+    @IBOutlet var loadingView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         progressView.hidden = false
-        DribbbleService().retrievePage(1) { page in
+        DribbbleService().retrievePage(actualPage) { page in
+            self.actualPage++
             self.shots = page.shots!
             self.progressView.hidden = true
             self.tableView.reloadData()
         }
         
         tableView.registerNib(UINib(nibName: "ShotTableViewCell", bundle:nil), forCellReuseIdentifier: "Cell")
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var offset = scrollView.contentOffset.y
+        var maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if (maxOffset - offset) <= 40 && progressView.hidden && !isLoading {
+            isLoading = true
+            loadingView.hidden = false
+            DribbbleService().retrievePage(actualPage) { page in
+                self.isLoading = false
+                self.loadingView.hidden = true
+                self.actualPage++
+                self.shots.extend(page.shots!)
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
