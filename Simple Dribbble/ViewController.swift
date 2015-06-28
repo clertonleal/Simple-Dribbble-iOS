@@ -39,9 +39,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ShotTableViewCell
-        
-        cell.title.text = shots[indexPath.row].title
-        cell.imageShot.kf_setImageWithURL(NSURL(string: shots[indexPath.row].image_teaser_url!)!)
+        let shot = shots[indexPath.row]
+        cell.title.text = shot.title
+        cell.imageShot.kf_setImageWithURL(NSURL(string: shot.image_url!)!)
+        cell.viewCount.text = String(shot.views_count!)
         return cell
     }
     
@@ -59,8 +60,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func configureTableView() {
-        tableView.rowHeight = 300
-        tableView.estimatedRowHeight = 300
+        tableView.rowHeight = 302
+        tableView.estimatedRowHeight = 302
     }
     
     

@@ -21,11 +21,8 @@ class ShotDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let coisa = DribbbleService()
-        coisa.retrievePage(1) { page in
-            self.text.text = page.shots![0].title
-            self.downloadImage(page.shots![0].image_url!)
-        }
+        text.text = shot.title!
+        downloadImage(shot.image_url!)
     }
     
     func downloadImage(imageUrl: String) {

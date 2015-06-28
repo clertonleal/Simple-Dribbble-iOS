@@ -11,4 +11,5 @@ import UIKit
 class ShotTableViewCell: UITableViewCell {
     @IBOutlet var imageShot: UIImageView!
     @IBOutlet var title: UILabel!
+    @IBOutlet var viewCount: UILabel!
 }
