@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22A605733EA769D44E9795A8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BB633A74B98665E3B05697 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		E52DC84E1B40CEBE004D7B18 /* dribbble_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = E52DC84C1B40CEBE004D7B18 /* dribbble_loading.png */; };
-		E52DC8511B40D305004D7B18 /* ic_dribbble.png in Resources */ = {isa = PBXBuildFile; fileRef = E52DC8501B40D305004D7B18 /* ic_dribbble.png */; };
 		E59255081B3C962800DCEC5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59255071B3C962800DCEC5E /* AppDelegate.swift */; };
 		E592550A1B3C962800DCEC5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59255091B3C962800DCEC5E /* ViewController.swift */; };
 		E592550D1B3C962800DCEC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E592550B1B3C962800DCEC5E /* Main.storyboard */; };
@@ -25,7 +23,6 @@
 		E59255381B3ED1E000DCEC5E /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59255371B3ED1E000DCEC5E /* Page.swift */; };
 		E592553A1B3ED78400DCEC5E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59255391B3ED78400DCEC5E /* Player.swift */; };
 		E592553C1B3ED8C500DCEC5E /* PlayerTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592553B1B3ED8C500DCEC5E /* PlayerTransformer.swift */; };
-		E592553F1B4031C000DCEC5E /* ic_view.png in Resources */ = {isa = PBXBuildFile; fileRef = E592553E1B4031C000DCEC5E /* ic_view.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +38,6 @@
 /* Begin PBXFileReference section */
 		14BB633A74B98665E3B05697 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2310B861BC1CD96F4D37FE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E52DC84C1B40CEBE004D7B18 /* dribbble_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dribbble_loading.png; sourceTree = "<group>"; };
-		E52DC8501B40D305004D7B18 /* ic_dribbble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_dribbble.png; sourceTree = "<group>"; };
 		E59255021B3C962800DCEC5E /* Simple Dribbble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Dribbble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59255061B3C962800DCEC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E59255071B3C962800DCEC5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +57,6 @@
 		E59255371B3ED1E000DCEC5E /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		E59255391B3ED78400DCEC5E /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E592553B1B3ED8C500DCEC5E /* PlayerTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTransformer.swift; sourceTree = "<group>"; };
-		E592553E1B4031C000DCEC5E /* ic_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_view.png; sourceTree = "<group>"; };
 		F6440F24F5ECCEDE9932E52B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +116,6 @@
 				E59255291B3CA80C00DCEC5E /* Model */,
 				E59255071B3C962800DCEC5E /* AppDelegate.swift */,
 				E592550E1B3C962800DCEC5E /* Images.xcassets */,
-				E59255401B4031DB00DCEC5E /* Resources */,
 				E59255051B3C962800DCEC5E /* Supporting Files */,
 			);
 			path = "Simple Dribbble";
@@ -199,16 +192,6 @@
 				E592553B1B3ED8C500DCEC5E /* PlayerTransformer.swift */,
 			);
 			name = Transformer;
-			sourceTree = "<group>";
-		};
-		E59255401B4031DB00DCEC5E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E52DC8501B40D305004D7B18 /* ic_dribbble.png */,
-				E52DC84C1B40CEBE004D7B18 /* dribbble_loading.png */,
-				E592553E1B4031C000DCEC5E /* ic_view.png */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		F72C0055217399F057B63BC8 /* Pods */ = {
@@ -303,13 +286,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E592553F1B4031C000DCEC5E /* ic_view.png in Resources */,
 				E592550D1B3C962800DCEC5E /* Main.storyboard in Resources */,
 				E59255121B3C962800DCEC5E /* LaunchScreen.xib in Resources */,
 				E592550F1B3C962800DCEC5E /* Images.xcassets in Resources */,
-				E52DC84E1B40CEBE004D7B18 /* dribbble_loading.png in Resources */,
 				E592552F1B3CAC7400DCEC5E /* ShotTableViewCell.xib in Resources */,
-				E52DC8511B40D305004D7B18 /* ic_dribbble.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +494,7 @@
 			baseConfigurationReference = 5E2310B861BC1CD96F4D37FE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Simple Dribbble/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -525,6 +506,7 @@
 			baseConfigurationReference = F6440F24F5ECCEDE9932E52B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Simple Dribbble/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
