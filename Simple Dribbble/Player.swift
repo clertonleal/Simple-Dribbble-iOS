@@ -20,9 +20,7 @@ struct Player: Mappable {
         mapping(map)
     }
     
-    init? () {
-        
-    }
+    init? () {}
     
     mutating func mapping(map: Map) {
         id           <- map["id"]

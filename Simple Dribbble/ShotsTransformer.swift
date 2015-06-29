@@ -23,6 +23,7 @@ class ShotsTransformer: TransformType {
         if let date = value {
             return Mapper().toJSONArray(value!)
         }
+        
         return nil
     }
 }

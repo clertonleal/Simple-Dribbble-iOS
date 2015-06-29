@@ -23,6 +23,7 @@ class PlayerTransformer: TransformType {
         if let date = value {
             return Mapper().toJSON(value!)
         }
+        
         return nil
     }
 }

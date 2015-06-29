@@ -18,9 +18,7 @@ struct Page: Mappable {
         mapping(map)
     }
     
-    init? () {
-        
-    }
+    init? () {}
     
     mutating func mapping(map: Map) {
         page        <- map["page"]

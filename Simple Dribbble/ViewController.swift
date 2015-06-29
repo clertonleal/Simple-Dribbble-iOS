@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var selectedShot: Shot!
     var actualPage = 1
     var isLoading = false
+    let dribbbleService = DribbbleService()
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var progressView: UIView!
@@ -23,11 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         configureTableView()
         progressView.hidden = false
-        DribbbleService().retrievePage(actualPage) { page in
-            self.actualPage++
-            self.shots = page.shots!
-            self.progressView.hidden = true
-            self.tableView.reloadData()
+        dribbbleService.retrievePage(actualPage) { page in
+            self.refreshDate(page)
         }
         
         tableView.registerNib(UINib(nibName: "ShotTableViewCell", bundle:nil), forCellReuseIdentifier: "Cell")
@@ -39,19 +37,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if (maxOffset - offset) <= 40 && progressView.hidden && !isLoading {
             isLoading = true
             loadingView.hidden = false
-            DribbbleService().retrievePage(actualPage) { page in
-                self.isLoading = false
-                self.loadingView.hidden = true
-                self.actualPage++
-                self.shots.extend(page.shots!)
-                self.tableView.reloadData()
+            dribbbleService.retrievePage(actualPage) { page in
+                self.refreshDate(page)
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,7 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ShotTableViewCell
         let shot = shots[indexPath.row]
         cell.title.text = shot.title
-        cell.imageShot.kf_setImageWithURL(NSURL(string: shot.image_url!)!)
+        cell.imageShot.kf_setImageWithURL(NSURL(string: shot.image_url!)!, placeholderImage: UIImage(named: "dribbble_loading.png"))
         cell.viewCount.text = String(shot.views_count!)
         return cell
     }
@@ -85,7 +74,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.estimatedRowHeight = 302
     }
     
+    func refreshDate(page: Page) {
+        isLoading = false
+        loadingView.hidden = true
+        progressView.hidden = true
+        actualPage++
+        shots.extend(page.shots!)
+        tableView.reloadData()
+    }
     
-
 }
 

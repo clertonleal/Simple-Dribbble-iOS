@@ -25,7 +25,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="BxA-CY-AYS"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaW-pu-hcs">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaW-pu-hcs">
                                 <rect key="frame" x="0.0" y="32" width="600" height="536"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OOG-nG-h9d">

@@ -26,4 +26,17 @@ class DribbbleService {
                 callback(response!)
         }
     }
+    
+    func getDescription(shot: Shot) -> String {
+        if let description = shot.description {
+            return NSAttributedString(
+                data: description.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
+                options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+                documentAttributes: nil,
+                error: nil)!.string
+        } else {
+            return ""
+        }
+    }
+
 }

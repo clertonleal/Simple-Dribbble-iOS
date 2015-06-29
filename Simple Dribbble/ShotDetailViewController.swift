@@ -13,6 +13,8 @@ import Kingfisher
 
 class ShotDetailViewController: UIViewController {
     
+    let dribbbleService = DribbbleService()
+    
     @IBOutlet var text: UILabel!
     @IBOutlet var image: UIImageView!
     @IBOutlet var viewCount: UILabel!
@@ -24,24 +26,12 @@ class ShotDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         text.text = shot.title!
         viewCount.text = String(shot.views_count!)
         authorName.text = shot.player!.name!
-        shotDescription.text = getDescription(shot)
+        shotDescription.text = dribbbleService.getDescription(shot)
         authorAvatar.kf_setImageWithURL(NSURL(string: shot.player!.avatar_url!)!)
-        image.kf_setImageWithURL(NSURL(string: shot.image_url!)!)
+        image.kf_setImageWithURL(NSURL(string: shot.image_url!)!, placeholderImage: UIImage(named: "dribbble_loading.png"))
     }
     
-    func getDescription(shot: Shot) -> String {
-        if let description = shot.description {
-            return NSAttributedString(
-                data: description.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
-                options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-                documentAttributes: nil,
-                error: nil)!.string
-        } else {
-            return ""
-        }
-    }
 }
