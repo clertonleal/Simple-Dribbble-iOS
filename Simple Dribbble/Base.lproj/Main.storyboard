@@ -116,32 +116,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A8L-Eg-O0m">
-                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="yrB-TF-srd"/>
+                                    <constraint firstAttribute="height" constant="300" id="yrB-TF-srd"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-ld-SMi">
-                                <rect key="frame" x="16" y="272" width="70" height="70"/>
+                                <rect key="frame" x="16" y="372" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Gca-EJ-71O"/>
                                     <constraint firstAttribute="width" constant="70" id="eBL-H5-uCT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMB-6J-GXT">
-                                <rect key="frame" x="94" y="290" width="82" height="34"/>
+                                <rect key="frame" x="94" y="390" width="82" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdL-mw-RDF">
-                                <rect key="frame" x="16" y="350" width="568" height="21"/>
+                                <rect key="frame" x="16" y="450" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSO-JF-iFJ">
-                                <rect key="frame" x="0.0" y="223" width="600" height="41"/>
+                                <rect key="frame" x="0.0" y="323" width="600" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvL-su-g9I">
                                         <rect key="frame" x="8" y="8" width="42" height="21"/>
