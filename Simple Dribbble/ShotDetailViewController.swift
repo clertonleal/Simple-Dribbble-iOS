@@ -21,6 +21,7 @@ class ShotDetailViewController: UIViewController {
     @IBOutlet var authorName: UILabel!
     @IBOutlet var shotDescription: UILabel!
     @IBOutlet var authorAvatar: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var shot: Shot!
     
@@ -32,6 +33,9 @@ class ShotDetailViewController: UIViewController {
         shotDescription.text = dribbbleService.getDescription(shot)
         authorAvatar.kf_setImageWithURL(NSURL(string: shot.player!.avatar_url!)!)
         image.kf_setImageWithURL(NSURL(string: shot.image_url!)!, placeholderImage: UIImage(named: "dribbble_loading.png"))
+        
+        
+        scrollView.contentSize = CGSize(width: self.view.bounds.width, height: 1500)
     }
     
 }
