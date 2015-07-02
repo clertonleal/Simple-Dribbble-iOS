@@ -34,6 +34,19 @@ class ShotDetailViewController: UIViewController {
         image.kf_setImageWithURL(NSURL(string: shot.image_url!)!, placeholderImage: UIImage(named: "dribbble_loading.png"))
         scrollView.contentSize = CGSize(width: self.view.bounds.width, height: 1500)
         navigationItem.title = shot.title
+        var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        image.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func imageTapped(img: AnyObject) {
+        performSegueWithIdentifier("Zoom", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Zoom" {
+            let controller = segue.destinationViewController as! ZoomController
+            controller.shot = shot
+        }
     }
     
 }
