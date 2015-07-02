@@ -29,6 +29,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         tableView.registerNib(UINib(nibName: "ShotTableViewCell", bundle:nil), forCellReuseIdentifier: "Cell")
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController!.navigationBar.barTintColor = dribbbleService.dribbbleColor()
+        navigationController!.navigationBar.barStyle = UIBarStyle.Black
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

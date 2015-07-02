@@ -8,9 +8,9 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 import ObjectMapper
 import AlamofireObjectMapper
+import UIKit
 
 class DribbbleService {
     func retrievePage(page: Int, callback: (Page) -> Void) {
@@ -37,6 +37,10 @@ class DribbbleService {
         } else {
             return ""
         }
+    }
+
+    func dribbbleColor() -> UIColor {
+        return UIColor(red: 0.847, green: 0.106, blue: 0.376, alpha: 1)
     }
 
 }
