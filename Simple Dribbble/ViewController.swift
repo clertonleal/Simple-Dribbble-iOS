@@ -22,6 +22,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = UIColor.grayColor()
+        refreshControl.tintColor = dribbbleService.dribbbleColor()
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
+        
         configureTableView()
         progressView.hidden = false
         dribbbleService.retrievePage(actualPage) { page in
@@ -32,6 +39,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         navigationController!.navigationBar.barTintColor = dribbbleService.dribbbleColor()
         navigationController!.navigationBar.barStyle = UIBarStyle.Black
+    }
+    
+    func refresh(sender: UIRefreshControl) {
+        actualPage = 1
+        dribbbleService.retrievePage(actualPage) { page in
+            self.shots.removeAll()
+            self.refreshDate(page)
+            sender.endRefreshing()
+        }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
